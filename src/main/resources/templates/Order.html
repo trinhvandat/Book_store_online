@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset = "UTF-8">
+	<title>Đặt hàng</title>
+	<link rel="stylesheet"
+	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	      crossorigin="anonymous">
+</head>
+<body>
+<header>
+	<nav class="navbar navbar-expand-md navbar-dark"
+	     style="background-color: tomato">
+		<div>
+			<a href="https://www.javaguides.net" class="navbar-brand">Leonard Trinh</a>
+		</div>
+		<div>
+			<form method="get" th:action="@{/home}">
+				<input type="submit" value="Về Trang Chủ">
+			</form>
+		</div>
+	</nav>
+</header>
+<br>
+
+<div class="row">
+	<div class="container">
+		<h3 class="text-center">Chi tiết đơn đặt hàng</h3>
+		<hr>
+		<br>
+		<h3 class="text-center">Tính năng này hiện tại chưa được phát triển!!!</h3>
+		<hr>
+		<br>
+<!--		<form th:method="get" th:action="@{/order}">-->
+			<table class="table table-bordered">
+				<thead>
+				<tr>
+					<th>Tên mặt hàng</th>
+					<th>Số lượng</th>
+					<th>Giá tiền</th>
+					<th>Mô tả</th>
+				</tr>
+				</thead>
+				<tbody >
+				<tr>
+					<td>fallback for item's name</td>
+					<td>fallback for amount of item</td>
+					<td>fallback for total</td>
+					<td><input type="text" name="description" placeholder="mô tả đơn đặt hàng"></td>
+				</tr>
+				</tbody>
+				<tr>
+					<td>
+					<input type="submit" value="Thêm địa chỉ nhận hàng">
+					</td>
+				</tr>
+			</table>
+<!--		</form>-->
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset = "UTF-8">
+	<title>Chao mung ban den voi book store</title>
+</head>
+
+<style>
+	#welcome{
+		text-align: center;
+		color: red;
+		font: bold;
+	}
+</style>
+
+<body>
+	<h1 id="welcome">Chào mừng bạn đến với hệ thống bán sách và đồ dùng học tập trưc tuyến.</h1> <br> <br>
+	<form method="get" th:action="@{/login}">
+		<label>Đăng nhập để tiếp tục:</label><br>
+		<input type="submit" value="login">
+	</form>
+	<br>
+	<br>
+	<form method="get" th:action="@{/registration}">
+		<label>Nếu bạn chưa có tài khoản, đăng ký ngay để mua hàng trên hệ thống của chúng tôi:</label><br>
+		<input type="submit" value="register">
+	</form>
+</body>
+</html>

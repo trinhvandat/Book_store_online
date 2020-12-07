@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset = "UTF-8">
+	<title>Trang Chu</title>
+	<link rel="stylesheet"
+	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	      crossorigin="anonymous">
+</head>
+<body>
+<header>
+	<nav class="navbar navbar-expand-md navbar-dark"
+	     style="background-color: tomato">
+		<div>
+			<a href="https://www.javaguides.net" class="navbar-brand">Management Book </a>
+		</div>
+		<div>
+			<form method="get" th:action="@{/cart}">
+				<input type="submit" value="Xem giỏ hàng">
+			</form>
+		</div>
+	</nav>
+</header>
+<br>
+
+<div class="row">
+	<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
+	<div class="container">
+		<h3 class="text-center">List of Book</h3>
+		<hr>
+<!--		<div class="container text-left">-->
+<!--			<a href="book/new" class="btn btn-success">Add New Book</a>-->
+<!--		</div>-->
+		<br>
+		<table class="table table-bordered">
+			<thead>
+			<tr>
+				<th>ID</th>
+				<th>Title</th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Action</th>
+			</tr>
+			</thead>
+			<tbody th:each="item : ${items}">
+				<tr>
+					<td th:text="${item.id}"></td>
+					<td th:text="${item.title}"></td>
+					<td th:text="${item.name}"></td>
+					<td th:text="${item.price}"></td>
+					<td>
+						<form th:method="get" th:action="@{/home/detail/{id} (id = ${item.id})}">
+							<input type="submit" value="View detail item">
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		
+		</table>
+	</div>
+</div>
+</body>
+</html>

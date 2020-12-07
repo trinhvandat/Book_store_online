@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset = "UTF-8">
+	<title>Xem giỏ hàng</title>
+	<link rel="stylesheet"
+	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	      crossorigin="anonymous">
+</head>
+<body>
+<header>
+	<nav class="navbar navbar-expand-md navbar-dark"
+	     style="background-color: tomato">
+		<div>
+			<a href="https://www.javaguides.net" class="navbar-brand">Leonard Trinh</a>
+		</div>
+		<div>
+			<form method="get" th:action="@{/home}">
+				<input type="submit" value="Về Trang Chủ">
+			</form>
+		</div>
+	</nav>
+</header>
+<br>
+
+<div class="row">
+	<div class="container">
+		<h3 class="text-center">List of Book</h3>
+		<hr>
+		<br>
+		<form th:method="get" th:action="@{/order}">
+		<table class="table table-bordered">
+			<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Amount</th>
+				<th>Unit Price</th>
+				<th>Action</th>
+			</tr>
+			</thead>
+			<tbody th:each="item : ${cartList}">
+			<tr>
+				<td th:text="${item.item.id}"></td>
+				<td th:text="${item.item.name}"></td>
+				<td th:text="${item.amount}"></td>
+				<td th:text="${item.item.price}"></td>
+				<td>
+					<input type="submit" value="Đặt hàng">
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+</div>
+</body>
+</html>

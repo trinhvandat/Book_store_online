@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset = "UTF-8">
+	<title>Dang Ky Tai Khoan</title>
+</head>
+<body>
+	<h2>Dang Ky Tai Khoan:</h2>
+	
+	<form method="post" th:action="@{/registration/add}" th:object="${customer}">
+		
+		<div style="text-align: left">
+			<h3 style="color: red">Customer's name:</h3>
+			<label> Firstname </label>
+			<input type="text" th:field="*{fullName.firstName}" size="15"/> <br> <br>
+			<label> Middlename: </label>
+			<input type="text" th:field="*{fullName.midName}" size="15"/> <br> <br>
+			<label> Lastname: </label>
+			<input type="text" th:field="*{fullName.lastName}" size="15"/> <br> <br> <br> <br>
+		</div>
+		
+		<div>
+			<h3 style="color: red">Customer's address</h3>
+			<label> number house: </label>
+			<input type="text" th:field="*{address.numberHouse}" size="15"/> <br> <br>
+			<label> street: </label>
+			<input type="text" th:field="*{address.street}" size="15"/> <br> <br>
+			<label> District: </label>
+			<input type="text" th:field="*{address.district}" size="15"/> <br> <br>
+			<label> City: </label>
+			<input type="text" th:field="*{address.city}" size="15"/> <br> <br> <br> <br>
+		</div>
+		
+		<div>
+			<h3 style="color: red">Account</h3>
+			<label> Username: </label>
+			<input type="text" th:field="*{account.username}" size="15"/> <br> <br>
+			<label> Password: </label>
+			<input type="text" th:field="*{account.password}" size="15"/> <br> <br> <br> <br>
+			<label> District: </label>
+		</div>
+		
+		<label> Email: </label>
+		<input type="text" th:field="*{email}" size="15"/> <br> <br>
+		<label> Phone Number: </label>
+		<input type="text" th:field="*{phoneNumber}" size="15"/> <br> <br>
+		
+		<input type="submit" value="Dang ky">
+	</form>
+	
+</body>
+</html>
